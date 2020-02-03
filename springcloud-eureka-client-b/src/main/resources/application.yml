@@ -1,0 +1,9 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: clientB
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8081/eureka/

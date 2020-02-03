@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: clientC
+  profiles:
+    active: ${profileActive}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server2:8082/eureka/
