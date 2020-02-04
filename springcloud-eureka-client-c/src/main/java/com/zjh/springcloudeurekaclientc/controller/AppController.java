@@ -26,9 +26,9 @@ public class AppController {
     private static List<Student> studentList = new LinkedList<>();
 
     private  List<Student> generateStudentList() {
-        Student student1 = new Student("zjh", 24,null);
-        Student student2 = new Student("aaa", 25,null);
-        Student student3 = new Student("bbb", 26,null);
+        Student student1 = new Student(1,"zjh", 24,null);
+        Student student2 = new Student(2,"aaa", 25,null);
+        Student student3 = new Student(3,"bbb", 26,null);
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -38,7 +38,7 @@ public class AppController {
     @RequestMapping("/getStudent")
     public Student getStudent(String name) {
         List<Student> defaultOne = new LinkedList<>();
-        defaultOne.add(new Student("default",100,null));
+        defaultOne.add(new Student(0,"default",100,null));
         List<Student> studentList = generateStudentList();
         Student student = Optional.of(studentList.stream().filter(t -> t.getName().equals(name)).collect(Collectors.toList())).
                 orElse(defaultOne).get(0);

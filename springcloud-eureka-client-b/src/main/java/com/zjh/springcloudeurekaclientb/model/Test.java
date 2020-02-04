@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  * @version 1.00
  * @date 2020/2/3 16:17
  */
-@Component
+//@Component
 public class Test implements BeanNameAware , BeanFactoryAware , ApplicationContextAware, BeanPostProcessor, DisposableBean {
     private String name;
 
