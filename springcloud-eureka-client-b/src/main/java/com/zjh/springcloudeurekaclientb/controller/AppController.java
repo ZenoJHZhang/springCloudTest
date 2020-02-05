@@ -6,6 +6,7 @@ import com.zjh.springcloudeurekaclientb.service.AppService;
 import com.zjh.springcloudeurekaclientb.service.ClassService;
 import com.zjh.springcloudeurekaclientb.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,9 @@ public class AppController {
     private final StudentService studentService;
     private final ClassService classService;
 
+    @Value("${studentName}")
+    private String studentName;
+
     @Autowired
     public AppController(AppService appService, StudentService studentService, ClassService classService) {
         this.appService = appService;
@@ -43,5 +47,10 @@ public class AppController {
         int id = student.getIntValue("id");
         String classId = classService.getStudentClassById(id);
         return JSON.toJSONString(student) + classId;
+    }
+
+    @GetMapping("/studentName")
+    public String studentName(){
+        return studentName;
     }
 }

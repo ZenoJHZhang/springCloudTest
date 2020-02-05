@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      name: testConfig
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8081/eureka/

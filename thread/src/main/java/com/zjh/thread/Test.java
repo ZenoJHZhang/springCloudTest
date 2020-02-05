@@ -18,7 +18,7 @@ import java.util.concurrent.Callable;
 public class Test implements Callable {
     @Override
     public String call()  {
-        String url = "http://localhost:8080/sayHello";
+        String url = "http://localhost:8080/getStudentById?name=zjh";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(url)

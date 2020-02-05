@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zuul
+server:
+  port: 11111
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8081/eureka/
+zuul:
+  routes:
+    clientA: /a/**
+    clientB: /b/**
